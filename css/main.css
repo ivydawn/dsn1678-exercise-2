@@ -87,7 +87,9 @@ body {
   transition: color 500ms linear;
 }
 
-.chart__label:hover {
+.chart__item:hover .chart__label,
+.chart__item:focus	.chart__label,
+.chart__item:active .chart__label {
 	color: #0F6;
 	
 }
@@ -108,6 +110,9 @@ body {
   background-color: rgba(127, 219, 255, 0.6);
   
   transition: background-color 500ms linear;
+  
+  -webkit-animation: slide-up 1000ms ease-out;
+	animation: slide-up 1000ms ease-out;
  
 }
 
@@ -132,6 +137,8 @@ body {
   opacity: 0;
 
   text-align: center;
+  transition: all 250ms linear;
+  
 }
 
 .chart__count::after {
@@ -147,3 +154,38 @@ body {
   border-right: 10px solid transparent;
   border-top: 10px solid #000;
 }
+
+.chart__item:hover .chart__count{
+  top: -4em;
+  opacity: 1;
+		
+	
+}
+
+@-webkit-keyframes slide-up{
+	0%{
+		top: 10em;
+		
+	}
+	
+	100%{
+		top: 0;
+		
+	}
+	
+}
+
+@keyframes slide-up{
+	0%{
+		top: 10em;
+		
+	}
+	
+	100%{
+		top: 0;
+		
+	}
+	
+}
+	
+
